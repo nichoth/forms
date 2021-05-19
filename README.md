@@ -1,5 +1,7 @@
 # forms
 
+See a [demo](https://nichoth.github.io/forms/)
+
 Form components that use `preact`
 
 The preact components simplify the creation of `labels` & `id` attributes, and

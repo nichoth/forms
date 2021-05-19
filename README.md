@@ -15,6 +15,12 @@ npm i -S @nichoth/forms
 
 ## use
 
+### css
+`my-stylesheet.scss`:
+```css
+@use "node_modules/@nichoth/forms/src/style";
+```
+
 ### with browserify
 ```js
 var { TextInput } = require('@nichoth/forms')
@@ -59,11 +65,6 @@ output:
 ```
 
 ---------------------------------
-
-`style.scss`:
-```css
-@use "node_modules/@nichoth/forms/src/style";
-```
 
 ## read
 

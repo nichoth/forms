@@ -42,8 +42,8 @@
     }
     
     // this part makes the `label` float
+    // input:valid ~ label,
     input:focus ~ label,
-    input:valid ~ label,
     // float when it's not empty
     input:not(:placeholder-shown) ~ label {
         top: -20px;

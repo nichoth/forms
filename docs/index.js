@@ -11,7 +11,13 @@ function submit (ev) {
 function Demo () {
     return html`<form onsubmit=${submit}>
         <${TextInput} name="test-input" displayName="test input"
-        minlength="3" maxlength="6" />
+            minlength="3" maxlength="6" required=${true}
+        />
+
+        <${TextInput} name="something" displayName="something else"
+            minlength="3" maxlength="6" required=${false}
+        />
+
         <button type="submit">submit!</button>
     </form>`
 }

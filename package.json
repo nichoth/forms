@@ -2,7 +2,8 @@
   "name": "@nichoth/forms",
   "description": "Stuff for making forms",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "src/forms.js",
+  "browser": "src/forms.js",
   "scripts": {
     "start": "npm run build && concurrently --kill-others \"npm run serve\" \"npm run watch-sass\"",
     "dist": "mkdir -p dist && npm run build-dist && sass src/style.scss dist/style.css --style compressed --embed-source-map",

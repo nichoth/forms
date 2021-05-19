@@ -1,4 +1,4 @@
-var { TextInput } = require('../src')
+var { TextInput } = require('../src/forms')
 import { render } from 'preact';
 import { html } from 'htm/preact';
 

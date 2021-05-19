@@ -5,6 +5,28 @@ Form components that use `preact`
 The preact components simplify the creation of `labels` & `id` attributes, and
 form validation is done solely through css.
 
+## install
+
+```
+npm i -S @nichoth/forms
+```
+
+## use
+
+### with browserify
+```js
+var { TextInput } = require('@nichoth/forms')
+```
+
+### no browserify
+```html
+<script src="/path/to/@nichoth/forms/dist/bundle.js"></script>
+<script>
+    var { TextInput } = window.forms
+    // ...
+</script>
+```
+
 ## example
 
 `index.js`:

@@ -1,7 +1,7 @@
 {
   "name": "@nichoth/forms",
   "description": "Stuff for making forms",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "scripts": {
     "start": "npm run build && concurrently --kill-others \"npm run serve\" \"npm run watch-sass\"",

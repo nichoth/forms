@@ -1,10 +1,13 @@
 # forms
 
-Stuff for making forms
+Form components that use `preact`
+
+The preact components simplify the creation of `labels` & `id` attributes, and
+form validation is done solely through css.
 
 ## example
 
-`index.js` --
+`index.js`:
 ```js
 var { TextInput } = require('@nichoth/forms')
 import { render } from 'preact';
@@ -13,15 +16,27 @@ import { html } from 'htm/preact';
 function Demo () {
     return html`<form>
         <${TextInput} name="test-input" displayName="test input"
-        minlength="3" maxlength="6" />
+            minlength="3" maxlength="6" />
     </form>`
 }
 
 render(html`<${Demo} />`, document.getElementById('content'));
 ```
 
-`style.scss` --
+output:
+```html
+<form>
+    <div class="input-group">
+        <input name="test-input" type="text" placeholder=" " required
+            minlength="3" maxlength="6" id="test-input">
+        <label for="test-input">test input</label>
+    </div>
+</form>
+```
 
+---------------------------------
+
+`style.scss`:
 ```css
 @use "node_modules/@nichoth/forms/src/style";
 ```

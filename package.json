@@ -7,12 +7,12 @@
   "scripts": {
     "start": "npm run build && concurrently --kill-others \"npm run serve\" \"npm run watch-sass\"",
     "dist": "mkdir -p dist && npm run build-dist && sass src/style.scss dist/style.css --style compressed --embed-source-map",
-    "serve": "budo example/index.js:bundle.js --pushstate --dir=example --live --open -- -p esmify -dv",
+    "serve": "budo docs/index.js:bundle.js --pushstate --dir=docs --live --open -- -p esmify -dv",
     "build": "npm run build-sass && npm run build-js",
-    "build-js": "browserify example/index.js -d -v -p esmify > example/bundle.js",
+    "build-js": "browserify docs/index.js -d -v -p esmify > docs/bundle.js",
     "build-dist": "browserify src/index.js -g unassertify -g uglifyify -p bundle-collapser/plugin -p esmify | uglifyjs -mc > dist/bundle.js",
-    "build-sass": "sass example/style.scss example/style.css --style compressed --embed-source-map",
-    "watch-sass": "sass --watch example/style.scss example/style.css",
+    "build-sass": "sass docs/style.scss docs/style.css --style compressed --embed-source-map",
+    "watch-sass": "sass --watch docs/style.scss docs/style.css",
     "preversion": "npm run dist",
     "postversion": "git push --no-verify && git push --tags --no-verify && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"

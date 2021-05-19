@@ -62,3 +62,15 @@ output:
 ```css
 @use "node_modules/@nichoth/forms/src/style";
 ```
+
+## read
+
+https://css-tricks.com/form-validation-ux-html-css/
+
+
+https://daverupert.com/2017/11/happier-html5-forms/
+
+> Eventually, I discovered the simplest solution by hooking into the input’s invalid event. Just before the submit event, the browser performs a form.checkValidity() check which checks all the inputs. All inputs with invalid data fire the invalid event to say “Hey, I have invalid data!” It’s here that we can apply the error class we need.
+
+
+

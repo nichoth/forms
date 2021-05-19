@@ -1,0 +1,42 @@
+{
+  "name": "@nichoth/forms",
+  "description": "Stuff for making forms",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && concurrently --kill-others \"npm run serve\" \"npm run watch-sass\"",
+    "dist": "mkdir -p dist && npm run build-dist && sass src/style.scss dist/style.css --style compressed --embed-source-map",
+    "serve": "budo example/index.js:bundle.js --pushstate --dir=example --live --open -- -p esmify -dv",
+    "build": "npm run build-sass && npm run build-js",
+    "build-js": "browserify example/index.js -d -v -p esmify > example/bundle.js",
+    "build-dist": "browserify src/index.js -g unassertify -g uglifyify -p bundle-collapser/plugin -p esmify | uglifyjs -mc > dist/bundle.js",
+    "build-sass": "sass example/style.scss example/style.css --style compressed --embed-source-map",
+    "watch-sass": "sass --watch example/style.scss example/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nichoth/forms.git"
+  },
+  "author": "Nick Thomas <nichoth@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nichoth/forms/issues"
+  },
+  "homepage": "https://github.com/nichoth/forms#readme",
+  "dependencies": {
+    "htm": "^3.0.4"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "budo": "^11.6.4",
+    "bundle-collapser": "^1.4.0",
+    "concurrently": "^6.1.0",
+    "esmify": "^2.1.1",
+    "preact": "^10.5.13",
+    "sass": "^1.32.13",
+    "uglify-js": "^3.13.7",
+    "uglifyify": "^5.0.2",
+    "unassertify": "^2.1.1"
+  }
+}

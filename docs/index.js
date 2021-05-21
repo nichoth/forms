@@ -22,6 +22,7 @@ function Demo () {
             <${NumberInput} min=${2} max=${6} value=${3}
                 onIncrease=${ev => console.log('increase')}
                 onDecrease=${ev => console.log('decrease')}
+                onChange=${ev => console.log('change', ev.target.value)}
             />
         </div>
 

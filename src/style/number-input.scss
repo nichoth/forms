@@ -25,7 +25,7 @@
         }
     }
 
-    .quantity-nav {
+    .number-nav {
         float: left;
         position: relative;
         height: 42px!important;
@@ -34,9 +34,11 @@
             top: initial;
             position: initial;
             color: #333;
+            border: none;
+            background-color: transparent;
         }
         
-        .quantity-button {
+        .number-button {
             position: relative;
             cursor: pointer;
             border-left: 1px solid #eee;
@@ -54,14 +56,14 @@
             -o-user-select: none;
             user-select: none;
 
-            &.quantity-up {
+            &.number-up {
                 position: absolute;
                 height: 50%;
                 top: 0;
                 border-bottom: 1px solid #eee;
             }
 
-            &.quantity-down {
+            &.number-down {
                 position: absolute;
                 bottom: -1px;
                 height: 50%;

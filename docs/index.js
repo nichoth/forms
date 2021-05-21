@@ -1,4 +1,4 @@
-var { TextInput } = require('../src/forms')
+var { TextInput, NumberInput } = require('../src/forms')
 import { render } from 'preact';
 import { html } from 'htm/preact';
 
@@ -18,7 +18,16 @@ function Demo () {
             minlength="3" maxlength="6" required=${false}
         />
 
-        <button type="submit">submit!</button>
+        <div class="number">
+            <${NumberInput} min=${2} max=${6} value=${3}
+                onIncrease=${ev => console.log('increase')}
+                onDecrease=${ev => console.log('decrease')}
+            />
+        </div>
+
+        <div class="button">
+            <button type="submit">submit!</button>
+        </div>
     </form>`
 }
 

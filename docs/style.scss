@@ -1,5 +1,20 @@
-@use '../src/style.scss';
+// @use '../src/style/index.scss';
+@use '../src/style/text-input.scss';
+@use '../src/style/number-input.scss';
+
+// body {
+//     // background-color: pink;
+// }
 
 form {
     max-width: 50%;
+}
+
+div.button {
+    margin-top: 1rem;
+}
+
+div.number {
+    width: 100vw;
+    height: 4rem;
 }

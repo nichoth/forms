@@ -17,20 +17,23 @@ npm i -S @nichoth/forms
 
 ### css
 `my-stylesheet.scss`:
-```css
-@use "node_modules/@nichoth/forms/src/style";
+```scss
+@use "node_modules/@nichoth/forms/src/style/index";
+// or individually
+@use "node_modules/@nichoth/forms/src/style/number-input";
+@use "node_modules/@nichoth/forms/src/style/text-input";
 ```
 
 ### with browserify
 ```js
-var { TextInput } = require('@nichoth/forms')
+var { TextInput, NumberInput } = require('@nichoth/forms')
 ```
 
 ### no browserify
 ```html
 <script src="/path/to/@nichoth/forms/dist/bundle.js"></script>
 <script>
-    var { TextInput } = window.forms
+    var { TextInput, NumberInput } = window.forms
     // ...
 </script>
 ```
@@ -39,12 +42,20 @@ var { TextInput } = require('@nichoth/forms')
 
 `index.js`:
 ```js
-var { TextInput } = require('@nichoth/forms')
+var { TextInput, NumberInput } = require('@nichoth/forms')
 import { render } from 'preact';
 import { html } from 'htm/preact';
 
 function Demo () {
     return html`<form>
+        <${NumberInput} name="test-number" min=${3} max=${6}
+            value=${4}
+            onIncrease=${ev => console.log('increase', ev)}
+            onDecrease=${ev => console.log('decrease', ev)}
+            name="foooo"
+            onChange=${ev => console.log('change', ev)}
+        />
+
         <${TextInput} name="test-input" displayName="test input"
             minlength="3" maxlength="6" />
     </form>`

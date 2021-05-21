@@ -14,11 +14,17 @@ function NumberInput (props) {
         />
         <div class="number-nav">
             <div class="number-button number-up">
-                <button onclick="${onIncrease}">+</button>
+                <button onclick="${ev => {
+                    ev.preventDefault()
+                    onIncrease(ev)
+                } }">+</button>
             </div>
 
             <div class="number-button number-down">
-                <button onclick="${onDecrease}">-</button>
+                <button onclick="${ev => {
+                    ev.preventDefault()
+                    onDecrease(ev)
+                } }">-</button>
             </div>
         </div>
     </div>`

@@ -6,7 +6,7 @@
   "browser": "src/forms.js",
   "scripts": {
     "start": "npm run build && concurrently --kill-others \"npm run serve\" \"npm run watch-sass\"",
-    "dist": "mkdir -p dist && npm run build-dist && sass src/style.scss dist/style.css --style compressed --embed-source-map",
+    "dist": "mkdir -p dist && npm run build-dist && sass src/style/index.scss dist/style.css --style compressed --embed-source-map",
     "serve": "budo docs/index.js:bundle.js --pushstate --dir=docs --live --open -- -p esmify -dv",
     "build": "npm run build-sass && npm run build-js",
     "build-js": "browserify docs/index.js -d -v -p esmify > docs/bundle.js",

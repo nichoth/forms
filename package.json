@@ -14,7 +14,7 @@
     "build-sass": "sass docs/style.scss docs/style.css --style compressed --embed-source-map",
     "watch-sass": "sass --watch docs/style.scss docs/style.css",
     "preversion": "npm run dist && npm run build",
-    "postversion": "git commit -am --allow-empty 'build docs' && git push --no-verify && git push --tags --no-verify && npm publish",
+    "postversion": "git commit -am 'build docs' --allow-empty && git push --no-verify && git push --tags --no-verify && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

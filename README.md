@@ -5,7 +5,7 @@ See a [demo](https://nichoth.github.io/forms/)
 Form components that use `preact`
 
 The preact components simplify the creation of `labels` & `id` attributes, and
-form validation is done solely through css.
+form validation is done solely through css and html.
 
 ## install
 
@@ -48,6 +48,9 @@ import { html } from 'htm/preact';
 
 function Demo () {
     return html`<form>
+        <${TextInput} name="test-input" displayName="test input"
+            minlength="3" maxlength="6" />
+
         <${NumberInput} name="test-number" min=${3} max=${6}
             value=${4}
             onIncrease=${ev => console.log('increase', ev)}
@@ -56,15 +59,14 @@ function Demo () {
             onChange=${ev => console.log('change', ev)}
         />
 
-        <${TextInput} name="test-input" displayName="test input"
-            minlength="3" maxlength="6" />
     </form>`
 }
 
 render(html`<${Demo} />`, document.getElementById('content'));
 ```
 
-output:
+### output
+
 ```html
 <form>
     <div class="input-group">
@@ -73,6 +75,20 @@ output:
         <label for="test-input">test input</label>
     </div>
 </form>
+```
+
+```html
+<div class="input-group-number">
+    <input type="number" inputmode="numeric" pattern="[0-9]*" max="6" min="2">
+    <div class="number-nav">
+        <div class="number-button number-up">
+            <button>+</button>
+        </div>
+        <div class="number-button number-down">
+            <button>-</button>
+        </div>
+    </div>
+</div>
 ```
 
 ---------------------------------

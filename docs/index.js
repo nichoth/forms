@@ -31,9 +31,8 @@ function ClickingDemo () {
     </div>`
 }
 
-// the 'form-stuff' class here is necessary
 function Demo () {
-    return html`<form class="form-stuff" onsubmit=${submit}>
+    return html`<form onsubmit=${submit}>
         <${TextInput} name="test-input" displayName="test input"
             minlength="3" maxlength="6" required=${true}
         />

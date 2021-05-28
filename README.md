@@ -68,40 +68,20 @@ function Demo () {
             onChange=${ev => console.log('change', ev)}
         />
 
-        <${Button} type="submit" onClick=${doSomething} isSpinning=${resolving}>
+        <${Button} type="submit" onClick=${doSomething}
+            isSpinning=${resolving}
+        >
             do something
         </${Button}>
+
+        <div class="button">
+            <button type="submit">submit!</button>
+        </div>
 
     </form>`
 }
 
 render(html`<${Demo} />`, document.getElementById('content'));
-```
-
-### output
-
-```html
-<form>
-    <div class="input-group">
-        <input name="test-input" type="text" placeholder=" " required
-            minlength="3" maxlength="6" id="test-input">
-        <label for="test-input">test input</label>
-    </div>
-</form>
-```
-
-```html
-<div class="input-group-number">
-    <input type="number" inputmode="numeric" pattern="[0-9]*" max="6" min="2">
-    <div class="number-nav">
-        <div class="number-button number-up">
-            <button>+</button>
-        </div>
-        <div class="number-button number-down">
-            <button>-</button>
-        </div>
-    </div>
-</div>
 ```
 
 ---------------------------------

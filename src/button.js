@@ -1,9 +1,9 @@
 import { html } from 'htm/preact'
 
 function Button (props) {
-    if (props.isResolving) {
-        return html`<button ...${props}>
-            ${props.children}
+    if (props.isSpinning) {
+        return html`<button ...${props} class=${props.class || '' + ' spinning'}>
+            <span class="btn-content">${props.children}</span>
         </button>`
     }
 

@@ -32,7 +32,19 @@ function Demo () {
             />
         </div>
 
-        <${Button} type="submit" onClick=${click}>clicking</${Button}>
+        <div class="btn">
+            <${Button} type="submit" onClick=${click}>clicking</${Button}>
+        </div>
+
+        <div class="btn">
+            <${Button} isSpinning=${true} type="submit" onClick=${click}>
+                spinning
+            </${Button}>
+        </div>
+
+        <div class="btn">
+            <${Button} isSpinning=${true} onClick=${click}>a longer button</${Button}>
+        </div>
 
         <div class="button">
             <button type="submit">submit!</button>

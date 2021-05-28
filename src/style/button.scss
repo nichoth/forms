@@ -25,6 +25,12 @@ $button-color: #4281CB;
         }
 
         &.spinning {
+            opacity: 0.6;
+
+            .btn-content {
+                visibility: hidden;
+            }
+
             &:hover {
                 cursor: initial;
             }
@@ -36,8 +42,10 @@ $button-color: #4281CB;
                 position: absolute;
                 width: 20px;
                 height: 20px;
-                margin-top: -10px;
-                margin-left: -10px;
+                // margin-top: -10px;
+                // margin-left: -10px;
+                margin-top: -2px;
+                margin-left: 15px;
                 border-radius: 50%;
                 border-top: 2px solid white;
                 border-right: 2px solid transparent;

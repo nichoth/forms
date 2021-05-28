@@ -26,7 +26,7 @@ function ClickingDemo () {
 
      return html`<div class="clicking-demo">
         <${Button} type="submit" onClick=${doSomething} isSpinning=${resolving}>
-            clicking demo
+            do something
         </${Button}>
     </div>`
 }

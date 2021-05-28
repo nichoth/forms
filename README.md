@@ -42,11 +42,20 @@ var { TextInput, NumberInput } = require('@nichoth/forms')
 
 `index.js`:
 ```js
-var { TextInput, NumberInput } = require('@nichoth/forms')
+var { TextInput, NumberInput, Button } = require('@nichoth/forms')
 import { render } from 'preact';
 import { html } from 'htm/preact';
 
 function Demo () {
+    var [resolving, setResolving] = useState(false)
+
+    function doSomething (ev) {
+        ev.preventDefault()
+        setResolving(true)
+        // 3 second delay
+        setTimeout(() => setResolving(false), 3000)
+    }
+
     return html`<form>
         <${TextInput} name="test-input" displayName="test input"
             minlength="3" maxlength="6" />
@@ -58,6 +67,10 @@ function Demo () {
             name="foooo"
             onChange=${ev => console.log('change', ev)}
         />
+
+        <${Button} type="submit" onClick=${doSomething} isSpinning=${resolving}>
+            do something
+        </${Button}>
 
     </form>`
 }

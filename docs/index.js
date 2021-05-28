@@ -1,6 +1,7 @@
 var { TextInput, NumberInput, Button } = require('../src/forms')
 import { render } from 'preact';
 import { html } from 'htm/preact';
+import { useState } from 'preact/hooks';
 
 function submit (ev) {
     ev.preventDefault()
@@ -11,6 +12,23 @@ function submit (ev) {
 function click (ev) {
     ev.preventDefault()
     console.log('click', ev)
+}
+
+function ClickingDemo () {
+    var [resolving, setResolving] = useState(false)
+
+    function doSomething (ev) {
+        ev.preventDefault()
+        setResolving(true)
+        // 3 second delay
+        setTimeout(() => setResolving(false), 3000)
+    }
+
+     return html`<div class="clicking-demo">
+        <${Button} type="submit" onClick=${doSomething} isSpinning=${resolving}>
+            clicking demo
+        </${Button}>
+    </div>`
 }
 
 // the 'form-stuff' class here is necessary
@@ -33,17 +51,7 @@ function Demo () {
         </div>
 
         <div class="btn">
-            <${Button} type="submit" onClick=${click}>clicking</${Button}>
-        </div>
-
-        <div class="btn">
-            <${Button} isSpinning=${true} type="submit" onClick=${click}>
-                spinning
-            </${Button}>
-        </div>
-
-        <div class="btn">
-            <${Button} isSpinning=${true} onClick=${click}>a longer button</${Button}>
+            <${ClickingDemo} />
         </div>
 
         <div class="button">

@@ -1,4 +1,4 @@
-var { TextInput, NumberInput } = require('../src/forms')
+var { TextInput, NumberInput, Button } = require('../src/forms')
 import { render } from 'preact';
 import { html } from 'htm/preact';
 
@@ -8,8 +8,14 @@ function submit (ev) {
     console.log('value', ev.target.elements['test-input'].value)
 }
 
+function click (ev) {
+    ev.preventDefault()
+    console.log('click', ev)
+}
+
+// the 'form-stuff' class here is necessary
 function Demo () {
-    return html`<form onsubmit=${submit}>
+    return html`<form class="form-stuff" onsubmit=${submit}>
         <${TextInput} name="test-input" displayName="test input"
             minlength="3" maxlength="6" required=${true}
         />
@@ -25,6 +31,8 @@ function Demo () {
                 onChange=${ev => console.log('change', ev.target.value)}
             />
         </div>
+
+        <${Button} type="submit" onClick=${click}>clicking</${Button}>
 
         <div class="button">
             <button type="submit">submit!</button>

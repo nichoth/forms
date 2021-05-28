@@ -1,5 +1,4 @@
 # forms
-
 See a [demo](https://nichoth.github.io/forms/)
 
 Form components that use `preact`
@@ -22,6 +21,7 @@ npm i -S @nichoth/forms
 // or individually
 @use "node_modules/@nichoth/forms/src/style/number-input";
 @use "node_modules/@nichoth/forms/src/style/text-input";
+@use "node_modules/@nichoth/forms/src/style/button";
 ```
 
 ### with browserify

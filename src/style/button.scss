@@ -1,0 +1,49 @@
+
+$button-color: #4281CB;
+
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+}
+
+.form-stuff {
+
+    button {
+        color: white;
+        background-color: $button-color;
+        padding: 0.5rem 2rem;
+        font-size: 1rem;
+        border: none;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.6;
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        &.spinning {
+            &:hover {
+                cursor: initial;
+            }
+
+            &:before {
+                content: "";
+                background: transparent;
+                box-sizing: border-box;
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                margin-top: -10px;
+                margin-left: -10px;
+                border-radius: 50%;
+                border-top: 2px solid white;
+                border-right: 2px solid transparent;
+                animation: spinner 0.6s linear infinite;
+            }
+        }
+    }
+
+}

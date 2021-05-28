@@ -8,6 +8,7 @@ $button-color: #4281CB;
 .form-stuff {
 
     button {
+        position: relative;
         color: white;
         background-color: $button-color;
         padding: 0.5rem 2rem;
@@ -35,17 +36,22 @@ $button-color: #4281CB;
                 cursor: initial;
             }
 
-            &:before {
+            &::after {
                 content: "";
                 background: transparent;
                 box-sizing: border-box;
                 position: absolute;
-                width: 20px;
-                height: 20px;
+                width: 16px;
+                height: 16px;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
                 // margin-top: -10px;
                 // margin-left: -10px;
-                margin-top: -2px;
-                margin-left: 15px;
+                // margin-top: -2px;
+                // margin-left: 15px;
                 border-radius: 50%;
                 border-top: 2px solid white;
                 border-right: 2px solid transparent;

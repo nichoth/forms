@@ -35,13 +35,13 @@ function Counter (props) {
     var { min, max } = props
     var [count, setCount] = useState(3)
 
-    function inc (ev) {
+    function inc () {
         if ((parseInt(count) + 1) > max) return
         if (count < min) return setCount(min)
         setCount(count + 1)
     }
 
-    function dec (ev) {
+    function dec () {
         if ((parseInt(count) - 1) < min) return
         if (count > max) return setCount(max)
         setCount(count - 1)

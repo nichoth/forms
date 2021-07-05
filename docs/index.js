@@ -1,4 +1,5 @@
-var { TextInput, NumberInput, Button } = require('../src/forms')
+var { TextInput, NumberInput, Button, EditableField } =
+    require('../src/forms')
 import { render } from 'preact';
 import { html } from 'htm/preact';
 import { useState } from 'preact/hooks';
@@ -7,11 +8,6 @@ function submit (ev) {
     ev.preventDefault()
     console.log('submit')
     console.log('value', ev.target.elements['test-input'].value)
-}
-
-function click (ev) {
-    ev.preventDefault()
-    console.log('click', ev)
 }
 
 function ClickingDemo () {
@@ -58,6 +54,21 @@ function Counter (props) {
     `
 }
 
+function Editing () {
+    function save (newValue) {
+        console.log('save', newValue)
+        // wait 1 second
+        // you *must* return a promise here;
+        //   it is used by the `EditableField` component to
+        //   set the resolving state
+        return new Promise(resolve => setTimeout(resolve, 1000))
+    }
+
+    return html`
+        <${EditableField} value="example" onSave=${save} name="example" />
+    `
+}
+
 function Demo () {
     return html`<form onsubmit=${submit}>
         <${TextInput} name="test-input" displayName="test input"
@@ -71,6 +82,10 @@ function Demo () {
         <div class="number">
             <p>min 2, max 6</p>
             <${Counter} min=${2} max=${6} />
+        </div>
+
+        <div class="editing">
+            <${Editing} />
         </div>
 
         <div class="btn">

@@ -43,7 +43,7 @@ var { TextInput, NumberInput } = require('@nichoth/forms')
 $ npm start
 ```
 
-## update docs
+## update the example 
 ```
 $ npm version <major|minor|patch>
 ```

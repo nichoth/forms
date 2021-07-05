@@ -38,6 +38,16 @@ var { TextInput, NumberInput } = require('@nichoth/forms')
 </script>
 ```
 
+## develop
+```
+$ npm start
+```
+
+## update docs
+```
+$ npm version <major|minor|patch>
+```
+
 ## example
 
 `index.js`:

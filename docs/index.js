@@ -31,6 +31,33 @@ function ClickingDemo () {
     </div>`
 }
 
+function Counter (props) {
+    var { min, max } = props
+    var [count, setCount] = useState(3)
+
+    function inc (ev) {
+        if ((parseInt(count) + 1) > max) return
+        if (count < min) return setCount(min)
+        setCount(count + 1)
+    }
+
+    function dec (ev) {
+        if ((parseInt(count) - 1) < min) return
+        if (count > max) return setCount(max)
+        setCount(count - 1)
+    }
+
+    function change (ev) {
+        console.log('change', ev.target.value)
+        setCount(ev.target.value)
+    }
+
+    return html`
+        <${NumberInput} min=${2} max=${6} value=${count}
+            onIncrease=${inc} onDecrease=${dec} onChange=${change} />
+    `
+}
+
 function Demo () {
     return html`<form onsubmit=${submit}>
         <${TextInput} name="test-input" displayName="test input"
@@ -42,11 +69,8 @@ function Demo () {
         />
 
         <div class="number">
-            <${NumberInput} min=${2} max=${6} value=${3}
-                onIncrease=${ev => console.log('increase')}
-                onDecrease=${ev => console.log('decrease')}
-                onChange=${ev => console.log('change', ev.target.value)}
-            />
+            <p>min 2, max 6</p>
+            <${Counter} min=${2} max=${6} />
         </div>
 
         <div class="btn">

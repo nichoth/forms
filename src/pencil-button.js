@@ -12,3 +12,4 @@ function createPencil (html) {
 }
 
 module.exports = createPencil
+

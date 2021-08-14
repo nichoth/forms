@@ -25,7 +25,7 @@
         >
             ✏
         </button>
-    `}},{2:2,4:4}],7:[function(e,n,t){var _=e(9),o=e(11),r=e(5),u=e(6),e=e(10);n.exports={TextInput:o,NumberInput:_,Button:r,EditableField:u,PencilButton:e}},{10:10,11:11,5:5,6:6,9:9}],8:[function(e,n,t){window.forms=e(7)},{7:7}],9:[function(e,n,t){"use strict";var i=e(2);n.exports=function(e){var{name:n,min:t,max:_,onChange:o,value:e,onIncrease:r,onDecrease:u}=e;return i.html`<div class="form-stuff">
+    `}},{2:2,4:4}],7:[function(e,n,t){var _=e(9),o=e(11),r=e(5),u=e(6),e=e(10);n.exports={TextInput:o,NumberInput:_,Button:r,EditableField:u,createPencil:e}},{10:10,11:11,5:5,6:6,9:9}],8:[function(e,n,t){window.forms=e(7)},{7:7}],9:[function(e,n,t){"use strict";var i=e(2);n.exports=function(e){var{name:n,min:t,max:_,onChange:o,value:e,onIncrease:r,onDecrease:u}=e;return i.html`<div class="form-stuff">
         <div class="input-group-number">
             <input type="number" inputmode="numeric"
                 pattern="[0-9]*"
@@ -45,11 +45,11 @@
                 </div>
             </div>
         </div>
-    </div>`}},{2:2}],10:[function(e,n,t){"use strict";var _=e(2);n.exports=function(e){var n=e.class||e.className;return _.html`<button ...${e}
-        class="edit-pencil${n?" "+n:""}"
-    >
-        ✏
-    </button>`}},{2:2}],11:[function(e,n,t){"use strict";var _=e(2);n.exports=function(e){var{name:n,displayName:t}=e;return _.html`<div class="form-stuff">
+    </div>`}},{2:2}],10:[function(e,n,t){"use strict";n.exports=function(t){return function(e){var n=e.class||e.className;return t`<button ...${e}
+            className="edit-pencil${n?" "+n:""}"
+        >
+            ✏
+        </button>`}}},{}],11:[function(e,n,t){"use strict";var _=e(2);n.exports=function(e){var{name:n,displayName:t}=e;return _.html`<div class="form-stuff">
         <div class="input-group ${n}">
             <input name="${n}" type="text" placeholder=" "
                 required=${e.required} minlength=${e.minlength}

@@ -1,0 +1,29 @@
+// @use '../src/style/index.scss';
+@use '../src/style/text-input.scss';
+@use '../src/style/number-input.scss';
+@use '../src/style/button.scss';
+@use '../src/style/editable-field.scss';
+
+form {
+    max-width: 50%;
+}
+
+div.button {
+    margin-top: 1rem;
+}
+
+div.number {
+    width: 100vw;
+    height: 4rem;
+    margin-bottom: 2rem;
+}
+
+.form-stuff {
+    .btn {
+        margin-bottom: 1rem;
+    }
+}
+
+.editing {
+    margin-bottom: 1rem;
+}

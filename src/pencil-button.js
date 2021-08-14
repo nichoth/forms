@@ -1,12 +1,14 @@
-import { html } from 'htm/preact'
+// import { html } from 'htm/preact'
 
-function PencilButton (props) {
-    var cl = props.class || props.className
-    return html`<button ...${props}
-        class="edit-pencil${cl ? (' ' + cl) : ''}"
-    >
-        ✏
-    </button>`
+function createPencil (html) {
+    return function PencilButton (props) {
+        var cl = props.class || props.className
+        return html`<button ...${props}
+            className="edit-pencil${cl ? (' ' + cl) : ''}"
+        >
+            ✏
+        </button>`
+    }
 }
 
-module.exports = PencilButton
+module.exports = createPencil

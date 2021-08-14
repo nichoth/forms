@@ -1,4 +1,4 @@
-var { TextInput, NumberInput, Button, EditableField, PencilButton } =
+var { TextInput, NumberInput, Button, EditableField, createPencil } =
     require('../src/forms')
 import { render } from 'preact';
 import { html } from 'htm/preact';
@@ -68,6 +68,8 @@ function Editing () {
         <${EditableField} value="example" onSave=${save} name="example" />
     `
 }
+
+var PencilButton = createPencil(html)
 
 function Demo () {
     return html`<form onsubmit=${submit}>

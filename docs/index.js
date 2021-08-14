@@ -1,4 +1,4 @@
-var { TextInput, NumberInput, Button, EditableField } =
+var { TextInput, NumberInput, Button, EditableField, PencilButton } =
     require('../src/forms')
 import { render } from 'preact';
 import { html } from 'htm/preact';
@@ -94,6 +94,14 @@ function Demo () {
 
         <div class="button">
             <button type="submit">submit!</button>
+        </div>
+
+        <div>
+            testing the pencil button
+            <${PencilButton} onClick=${ev => {
+                ev.preventDefault()
+                console.log('click', ev)
+            }} />
         </div>
     </form>`
 }

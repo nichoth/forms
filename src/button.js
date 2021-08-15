@@ -18,4 +18,3 @@ function Button (props) {
 }
 
 module.exports = Button
-

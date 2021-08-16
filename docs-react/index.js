@@ -2,7 +2,7 @@ var { TextInput, NumberInput, Button, EditableField, createPencil } =
     require('../src/forms')
 // import { render } from 'preact';
 import { html } from 'htm/react';
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom'
 
 function submit (ev) {

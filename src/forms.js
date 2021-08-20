@@ -1,5 +1,5 @@
 var NumberInput = require('./number-input')
-var TextInput = require('./text-inptut')
+var TextInput = require('./text-input')
 var Button = require('./button')
 var EditableField = require('./editable-field')
 var createPencil = require('./pencil-button')

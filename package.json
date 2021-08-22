@@ -1,7 +1,7 @@
 {
   "name": "@nichoth/forms",
   "description": "Stuff for making forms",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "main": "src/forms.js",
   "browser": "src/forms.js",
   "scripts": {

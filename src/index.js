@@ -1,1 +1,0 @@
-window.forms = require('./forms')

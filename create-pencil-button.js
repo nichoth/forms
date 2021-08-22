@@ -4,7 +4,9 @@ function createPencil (html) {
         return html`<button ...${props}
             className="edit-pencil${cl ? (' ' + cl) : ''}"
         >
-            ✏
+            <span role="img" aria-label="edit">
+                ✏
+            </span>
         </button>`
     }
 }

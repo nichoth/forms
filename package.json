@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run build && concurrently --kill-others \"npm run serve\" \"npm run watch-sass\"",
     "start-react": "browserify docs-react/index.js -d -v -p esmify > docs-react/bundle.js && npm run build-sass-react && npm run serve-react",
-    "dist": "npm run build-dist && npm run build-dist-react && sass src/style/index.scss dist/style.css --style compressed --embed-source-map",
+    "dist": "npm run build-dist && npm run build-dist-react && sass style/index.scss dist/style.css --style compressed --embed-source-map",
     "serve": "budo docs/index.js:bundle.js --pushstate --dir=docs --live --open -- -p esmify -dv",
     "serve-react": "budo docs-react/index.js:bundle.js --pushstate --dir=docs-react --live --open -- -p esmify -dv",
     "build": "npm run build-sass && npm run build-sass-react && npm run build-js && npm run build-js-react",

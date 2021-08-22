@@ -1,5 +1,6 @@
 import { html } from 'htm/preact'
 import { useState } from 'preact/hooks';
+var PencilButton = require('./pencil-button')
 
 function EditableField (props) {
     var { value, onSave, name } = props
@@ -50,13 +51,8 @@ function EditableField (props) {
         <span class="field">${value}</span>
 
         <!-- pencil emoji -->
-        <button class="edit-pencil"
-            onClick=${_setEditing}
-            title="edit"
-        >
-            ✏
-        </button>
-    `;
+        <${PencilButton} onClick=${_setEditing} title="edit" />
+    `
 }
 
 module.exports = EditableField

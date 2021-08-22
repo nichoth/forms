@@ -1,5 +1,3 @@
-// import { html } from 'htm/preact'
-
 function createPencil (html) {
     return function PencilButton (props) {
         var cl = props.class || props.className
@@ -12,4 +10,3 @@ function createPencil (html) {
 }
 
 module.exports = createPencil
-

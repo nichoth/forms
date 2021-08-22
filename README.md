@@ -17,25 +17,21 @@ npm i -S @nichoth/forms
 ### css
 `my-stylesheet.scss`:
 ```scss
-@use "node_modules/@nichoth/forms/src/style/index";
+@use "./node_modules/@nichoth/forms/style/index";
 // or individually
-@use "node_modules/@nichoth/forms/src/style/number-input";
-@use "node_modules/@nichoth/forms/src/style/text-input";
-@use "node_modules/@nichoth/forms/src/style/button";
+@use "./node_modules/@nichoth/forms/style/number-input";
+@use "./node_modules/@nichoth/forms/style/text-input";
+@use "./node_modules/@nichoth/forms/style/button";
 ```
 
 ### with browserify
 ```js
-var { TextInput, NumberInput } = require('@nichoth/forms')
+var { TextInput, NumberInput } = require('@nichoth/forms/preact')
 ```
 
-### no browserify
-```html
-<script src="/path/to/@nichoth/forms/dist/bundle.js"></script>
-<script>
-    var { TextInput, NumberInput } = window.forms
-    // ...
-</script>
+Or react:
+```js
+var { TextInput, NumberInput } = require('@nichoth/forms/react')
 ```
 
 ## develop
@@ -53,7 +49,7 @@ $ npm version <major|minor|patch>
 `index.js`:
 ```js
 var { TextInput, NumberInput, Button, EditableField, PencilButton } =
-    require('@nichoth/forms')
+    require('@nichoth/forms/preact')
 import { render } from 'preact';
 import { html } from 'htm/preact';
 import { useState } from 'preact/hooks';

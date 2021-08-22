@@ -1,8 +1,9 @@
-var { TextInput, NumberInput, Button, EditableField, createPencil } =
-    require('../src/forms')
-// import { render } from 'preact';
+var { TextInput, NumberInput, Button, EditableField, PencilButton } =
+    require('../react')
 import { html } from 'htm/react';
-import React from 'react';
+// eslint-disable-next-line
+// import React from 'react';
+import { useState } from 'react';
 import ReactDOM from 'react-dom'
 
 function submit (ev) {
@@ -11,10 +12,16 @@ function submit (ev) {
     console.log('value', ev.target.elements['foo'].value)
 }
 
-var PencilButton = createPencil(html)
-var TextInputReact = TextInput.create(html)
-
 function Demo () {
+    var [resolving, setResolving] = useState(false)
+
+    function doSomething (ev) {
+        ev.preventDefault()
+        setResolving(true)
+        // 3 second delay
+        setTimeout(() => setResolving(false), 3000)
+    }
+
     return html`<form onSubmit=${submit}>
         <div>
             testing the pencil button
@@ -25,14 +32,18 @@ function Demo () {
         </div>
 
         <div>
-            <${TextInputReact} required=${true} name="foo"
-                displayName="foo"
+            <${TextInput} required=${true} name="foo"
+                displayName="foo" required=${true}
             />
         </div>
 
         <div>
-            <button type="submit">submit</button>
-            <button type="reset">reset</button>
+            <${Button} onClick=${doSomething} type="submit"
+                isSpinning=${resolving}
+            >
+                submit
+            <//>
+            <${Button} type="reset">reset<//>
         </div>
     </form>`
 }

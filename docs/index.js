@@ -8,6 +8,7 @@ function submit (ev) {
     ev.preventDefault()
     console.log('submit')
     console.log('value', ev.target.elements['test-input'].value)
+    console.log('something else', ev.target.elements['something'].value)
 }
 
 function ClickingDemo () {
@@ -71,11 +72,11 @@ function Editing () {
 
 function Demo () {
     return html`<form onsubmit=${submit}>
-        <${TextInput} name="test-input" displayName="test input"
+        <${TextInput} name="test-input" displayName="test input" value="bar"
             minlength="3" maxlength="6" required=${true}
         />
 
-        <${TextInput} name="something" displayName="something else"
+        <${TextInput} name="something" displayName="something else" value="foo"
             minlength="3" maxlength="6" required=${false}
         />
 

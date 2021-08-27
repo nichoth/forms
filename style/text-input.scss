@@ -21,6 +21,7 @@
             &:focus {
                 outline: none;
                 border-bottom: 4px solid #4285f4;
+                filter: drop-shadow(3px 3px 4px black);
             }
 
             // When input is...

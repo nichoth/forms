@@ -70,7 +70,21 @@ function Editing () {
     `
 }
 
+
 function Demo () {
+    var [formDemoState, setFormState] = useState({ isResolving: false })
+
+    function formSubmit (ev) {
+        ev.preventDefault()
+        setFormState({ isResolving: true })
+        var els = ev.target.elements
+        console.log('els', els)
+        setTimeout(() => {
+            setFormState({ isResolving: false })
+            console.log('done submitting')
+        }, 3000)
+    }
+
     return html`<form onsubmit=${submit}>
         <${TextInput} name="test-input" displayName="test input" value="bar"
             minlength="3" maxlength="6" required=${true}
@@ -104,7 +118,19 @@ function Demo () {
                 console.log('click', ev)
             }} />
         </div>
-    </form>`
+    </form>
+
+    <div class="form-demo">
+        <${TextInput} name="more-stuff" displayName="more stuff"
+            minlength="3" maxlength="6" required=${false}
+        />
+
+        <${Button} type="submit"
+            isSpinning=${formDemoState.isResolving}
+        >
+            Sumbit the form
+        </${Button}>
+    </div>`
 }
 
 render(html`<${Demo} />`, document.getElementById('content'));

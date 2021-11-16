@@ -79,6 +79,8 @@ function Demo () {
         setFormState({ isResolving: true })
         var els = ev.target.elements
         console.log('els', els)
+        var stuff = els['more-stuff'].value
+        console.log('more stuff', stuff)
         setTimeout(() => {
             setFormState({ isResolving: false })
             console.log('done submitting')
@@ -116,14 +118,12 @@ function Demo () {
         </div>
     </form>
 
-    <form class="form-demo" onSubmit=${submit}>
+    <form class="form-demo" onSubmit=${formSubmit}>
         <${TextInput} name="more-stuff" displayName="more stuff"
             minlength="3" maxlength="6" required=${false}
         />
 
-        <${Button} type="submit"
-            isSpinning=${formDemoState.isResolving}
-        >
+        <${Button} type="submit" isSpinning=${formDemoState.isResolving}>
             Submit the form
         </${Button}>
     </div>`

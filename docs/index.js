@@ -128,7 +128,7 @@ function Demo () {
         <${Button} type="submit"
             isSpinning=${formDemoState.isResolving}
         >
-            Sumbit the form
+            Submit the form
         </${Button}>
     </div>`
 }

@@ -107,10 +107,6 @@ function Demo () {
             <${ClickingDemo} />
         </div>
 
-        <div class="button">
-            <button type="submit">submit!</button>
-        </div>
-
         <div>
             testing the pencil button
             <${PencilButton} onClick=${ev => {

@@ -116,7 +116,7 @@ function Demo () {
         </div>
     </form>
 
-    <div class="form-demo">
+    <form class="form-demo" onSubmit=${submit}>
         <${TextInput} name="more-stuff" displayName="more stuff"
             minlength="3" maxlength="6" required=${false}
         />

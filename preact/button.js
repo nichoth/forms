@@ -8,11 +8,9 @@ function Button (props) {
             >
                 <span class="btn-content">${props.children}</span>
             </button>` :
-            html`<div >
-                <button ...${props}>
-                    ${props.children}
-                </button>
-            </div>`
+            html`<button ...${props}>
+                ${props.children}
+            </button>`
         }
         </span>`
 }

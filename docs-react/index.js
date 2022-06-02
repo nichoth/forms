@@ -38,6 +38,13 @@ function Demo () {
         </div>
 
         <div>
+            password testing
+            <${TextInput} type="password" name="password"
+                displayName="password"
+            />
+        </div>
+
+        <div>
             <${Button} onClick=${doSomething} type="submit"
                 isSpinning=${resolving}
             >

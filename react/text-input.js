@@ -9,7 +9,8 @@ function TextInput (props) {
         <div className="input-group ${name}">
             <input ...${_props} name="${name}" type=${props.type || 'text'}
                 placeholder=" " required=${props.required}
-                minLength=${props.minlength} maxLength=${props.maxlength}
+                minLength=${props.minlength || props.minLength}
+                maxLength=${props.maxlength || props.maxLength}
                 id="${name}"
             />
             <label htmlFor=${name}>${displayName}</label>

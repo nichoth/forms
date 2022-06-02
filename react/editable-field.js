@@ -1,5 +1,6 @@
 import { html } from 'htm/react';
 import { useState } from 'react';
+import * as React from 'react'
 
 function EditableField (props) {
     var { value, onSave, name } = props

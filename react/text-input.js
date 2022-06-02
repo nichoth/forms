@@ -1,4 +1,5 @@
 import { html } from 'htm/react'
+import * as React from 'react'
 
 function TextInput (props) {
     var { name, displayName } = props

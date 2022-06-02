@@ -1,4 +1,5 @@
 import { html } from 'htm/react'
+import * as React from 'react'
 
 function NumberInput (props) {
     var { name, min, max, onChange, value, onIncrease, onDecrease } = props

@@ -125,7 +125,7 @@ function Demo () {
         <${Button} type="submit" isSpinning=${formDemoState.isResolving}>
             Submit the form
         </${Button}>
-    </div>`
+    </form>`
 }
 
 render(html`<${Demo} />`, document.getElementById('content'));
